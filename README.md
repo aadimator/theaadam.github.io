@@ -1,6 +1,6 @@
 # The Aadam
 
-This is the Personal website of [Aadam](http://theaadam.github.io/)
+This is the Personal website of [Aadam](http://theaadam.com/)
 
 
 ## Author
