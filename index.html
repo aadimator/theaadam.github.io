@@ -1,27 +1,37 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+title: Home
+---
 
-<head>
-  <meta charset="utf-8">
-  <title>The Aadam</title>
-  <link rel="stylesheet" type="text/css" href="css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ site.baseurl }}{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-<body>
-  <header>
-    <a href="index.html" title="Aadam" id="logo">
-      <img src="img/aadam.jpg" alt="Photograph of Aadam" class="profile-photo">
-      <h1>The Aadam</h1>
-      <h2>Developer / Designer</h2>
-    </a>
-  </header>
-  <footer>
-    <a href="http://twitter.com/the_aadam" target="_blank"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
-    <a href="http://facebook.com/Aadam1369" target="_blank"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
-    <p>&copy; 2015 Aadam.</p>
-  </footer>
-</body>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-</html>
+    {{ post.excerpt }}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>

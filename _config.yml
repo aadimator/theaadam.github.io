@@ -1,0 +1,46 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+relative_permalinks: false
+
+
+# Encoding
+encoding: utf-8
+
+
+# Gems
+gems: [jekyll-paginate]
+
+# Setup
+title:               The Aadam
+tagline:             'My Showcase'
+description:         'I like to explore the vast and enchanting ocean of knowledge and collect the illuminating pearls of wisdom. This is my Showcase'
+url:                 'http://theaadam.com'
+baseurl:             ''
+paginate:            10
+excerpt_separator:   <!--more-->
+timezone:            Asia/Karachi
+locale:              en_us
+
+# About/contact
+author:
+  name:              Aadam
+  url:               https://twitter.com/theAadam
+  email:             aadam1369@gmail.com
+  twitter:           theAadam
+  github:            theAadam
+  linkedin:          theAadam
+  facebook:          Aadam1369
+  country:           Pakistan
+
+# Custom vars
+version:             1.0.0
+
+# Nav-Bar
+pages_list:
+  About: '/about'
+  Archive: '/archive'
+
+#Higlighter
+highlighter: pygments
